@@ -17,22 +17,17 @@ WORKDIR /var/www
 # Copiar projeto
 COPY . .
 
-# Copiar php.ini customizado
+# Configuração do PHP
 COPY ./docker/php.ini /usr/local/etc/php/php.ini
-
-# Instalar dependências
-RUN composer install
-RUN npm install && npm run build
 
 # Permissões Laravel
 RUN chmod -R 777 storage bootstrap/cache
 
-# Porta
+# Copia entrypoint
+COPY ./docker/entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
 EXPOSE 8000
 
 #iniciar aplicação
-CMD composer install && \
-    php artisan key:generate && \
-    php artisan migrate && \
-    php artisan db:seed && \
-    php artisan serve --host=0.0.0.0 --port=8000
+CMD ["/entrypoint.sh"]
