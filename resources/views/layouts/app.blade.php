@@ -33,7 +33,7 @@
                     x-show="show"
                     x-transition
                     x-init="setTimeout(() => show = false, 4000)"
-                    class="mb-4 p-4 bg-zinc-900 border text-green-600 rounded-md opacity-95"
+                    class="mb-4 p-4 bg-zinc-900 border text-green-600 rounded-md opacity-90"
                 >
                     {{ session('sucesso') }}
                 </div>
@@ -45,7 +45,7 @@
                     x-show="show"
                     x-transition
                     x-init="setTimeout(() => show = false, 4000)"
-                    class="mb-4 p-4 bg-zinc-900 border text-red-600 rounded-md opacity-95"
+                    class="mb-4 p-4 bg-zinc-900 border text-red-600 rounded-md opacity-90"
                 >
                     {{ session('erro') }}
                 </div>

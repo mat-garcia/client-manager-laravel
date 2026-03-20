@@ -30,10 +30,9 @@ RUN chmod -R 777 storage bootstrap/cache
 # Porta
 EXPOSE 8000
 
-
-
-# Subir aplicação
+#iniciar aplicação
 CMD composer install && \
     php artisan key:generate && \
     php artisan migrate && \
+    php artisan db:seed && \
     php artisan serve --host=0.0.0.0 --port=8000
