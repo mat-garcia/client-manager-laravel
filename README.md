@@ -62,7 +62,7 @@ Aqui voce pode:
 - Visualizar todos os clientes.
 - incluir, editar ou excluir um cliente.
 
-o `formulario` de clientes possui auto preenchimento de nos campos `rua`, `bairro` e `cidade` ao digitar o `cep`
+O `formulario` de clientes possui auto preenchimento nos campos `rua`, `bairro` e `cidade` ao digitar o `cep`
 
 Voce **não** pode incluir Clientes com mesmo endereco de Email.
 
